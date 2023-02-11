@@ -10,18 +10,21 @@ public class Car implements Vehicle {
     }
 
     @Override
-    public void changeGear(int a) {
-        System.out.println("Bilen " + name +  " har sat sit gear på: " + (gear = a));
+    public void changeGear(int newGear) {
+        gear = newGear;
+        System.out.println("Bilen " + name +  " har sat sit gear på: " + gear);
     }
 
     @Override
-    public void speedUp(int a) {
-        System.out.println("Farten på bilen " + name + " er på " + (speed = speed + a) + " km/t");
+    public void speedUp(int acceleration) {
+        speed = speed + acceleration;
+        System.out.println("Farten på bilen " + name + " er på " + speed + " km/t");
     }
 
     @Override
-    public void applyBrakes(int a) {
-        System.out.println("Farten kommer ned på " + (speed = speed - a) + " km/t efter " + name + " har bremset");
+    public void applyBrakes(int deceleration) {
+        speed = speed - deceleration;
+        System.out.println("Farten kommer ned på " + speed + " km/t efter " + name + " har bremset");
     }
 
     public void printStates() {
